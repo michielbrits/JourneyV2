@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile1.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile2.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile3.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile4.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/spriteStraight.png</File>
+  </SourceFiles>
+</SourceFileCollection>

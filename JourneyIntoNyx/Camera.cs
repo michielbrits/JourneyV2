@@ -32,7 +32,7 @@ namespace JourneyIntoNyx
             else if (position.X > xOffset - (viewport.Width / 2))
                 centre.X = xOffset - (viewport.Width / 2);
             else centre.X = position.X;
-
+            //centre.Y = (position.Y < viewport.Height / 2)?viewport.Height / 2: (position.Y > yOffset - (viewport.Height / 2))?yOffset - (viewport.Height / 2): position.Y;
             if (position.Y < viewport.Height / 2)
                 centre.Y = viewport.Height / 2;
             else if (position.Y > yOffset - (viewport.Height / 2))

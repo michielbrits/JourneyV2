@@ -68,10 +68,10 @@ namespace JourneyIntoNyx
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            player.Update(gameTime);
+            player.Update(gameTime, map);
             foreach (CollisionTiles tile in map.CollisionTiles)
             {
-                player.Collision(tile.Rectangle, map.Width, map.Heigth);
+                player.Collision(tile, map.Width, map.Heigth);
                 camera.Update(player.Position, map.Width, map.Heigth);
             }
                 

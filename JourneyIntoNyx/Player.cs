@@ -18,7 +18,7 @@ namespace JourneyIntoNyx
         public Vector2 velocity;
         public Rectangle playerRect;
         private bool hasJumped = false;
-
+        
         Animation walkAnimation;
         Animation idleAnimation;
         
@@ -35,8 +35,8 @@ namespace JourneyIntoNyx
         public void Load(ContentManager Content)
         {
             
-            walkAnimation = new Animation(Content.Load<Texture2D>(@"spriteRight"), 23, 0.1f, true);
-            idleAnimation = new Animation(Content.Load<Texture2D>(@"spriteStraight"), 23, 0.1f, true);
+            walkAnimation = new Animation(Content.Load<Texture2D>(@"spriteRight"), 64, 0.1f, true);
+            idleAnimation = new Animation(Content.Load<Texture2D>(@"spriteStraight"), 64, 0.1f, true);
             animationPlayer.PlayAnimation(walkAnimation);
             animationPlayer.PlayAnimation(idleAnimation);
             //Add new animations here

@@ -33,7 +33,10 @@ namespace JourneyIntoNyx
 
         public void Load(ContentManager Content)
         {
+            
             walkAnimation = new Animation(Content.Load<Texture2D>(@"Spritesheet"), 23, 0.1f, true);
+            
+
             //Add new animations here
         }
 

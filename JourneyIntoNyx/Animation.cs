@@ -14,6 +14,7 @@ namespace JourneyIntoNyx
         public Texture2D Texture
         {
             get { return texture; }
+
         }
 
         public int FrameWidth;
@@ -42,6 +43,7 @@ namespace JourneyIntoNyx
             frameTime = newFrameTime;
             isLooping = newIsLooping;
             FrameCount = texture.Width / FrameWidth;
+            
         }
         
     }

@@ -10,11 +10,15 @@ namespace JourneyIntoNyx
 {
     struct AnimationPlayer
     {
+        
         Animation animation;
         public Animation Animation
         {
-            get { return animation; }
+            get { return animation;}
+            
+            
         }
+        
         int frameIndex;
         public int FrameIndex
         {
@@ -35,15 +39,16 @@ namespace JourneyIntoNyx
             animation = newAnimation;
             frameIndex = 0;
             timer = 0;
+
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 position, SpriteEffects spriteEffects)
         {
-            if (Animation == null)
-                throw new NotSupportedException("Geen animatie in content pipeline tool");
+            
             timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
             while (timer >= animation.FrameTime)
             {
+                timer -= animation.FrameTime;
                 if (animation.IsLooping)
                     frameIndex = (frameIndex + 1) % animation.FrameCount;
                 else frameIndex = Math.Min(frameIndex + 1, animation.FrameCount - 1);

@@ -10,14 +10,39 @@ namespace JourneyIntoNyx
 {
     class Animation
     {
-        Texture2D spriteSheet;
-        public Vector2 Position;
-        float scale;
-        int elapsedTime, frameCount, currentFrame;
-        public int FrameWidth, FrameHeigth;
-        public bool Active, Looping;
-        Color color;
-        Rectangle sourceRect, destRect = new Rectangle();
+        Texture2D texture;
+        public Texture2D Texture
+        {
+            get { return texture; }
+        }
+
+        public int FrameWidth;
+        public int FrameHeight
+        {
+            get { return texture.Height; }
+        }
+
+        float frameTime;
+        public float FrameTime
+        {
+            get { return frameTime; }
+        }
+        public int FrameCount;
+
+        bool isLooping;
+        public bool IsLooping
+        {
+            get { return isLooping; }
+        }
+
+        public Animation(Texture2D newTexture, int newFrameWidth, float newFrameTime, bool newIsLooping)
+        {
+            texture = newTexture;
+            FrameWidth = newFrameWidth;
+            frameTime = newFrameTime;
+            isLooping = newIsLooping;
+            FrameCount = texture.Width / FrameWidth;
+        }
         
     }
 }

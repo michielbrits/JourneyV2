@@ -44,7 +44,7 @@ namespace JourneyIntoNyx
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,2,0,0,0,0,1,2,2,3,0,0, },
+                {0,0,0,0,0,2,0,0,0,0,0,1,2,3,0,0, },
                 {0,1,3,0,0,0,0,0,0,2,0,0,0,0,0,0, },
                 {2,3,0,0,0,2,0,0,0,0,0,2,0,0,0,0, },
                 {3,0,0,0,1,3,0,0,1,0,0,0,0,0,0,0, },
@@ -85,7 +85,7 @@ namespace JourneyIntoNyx
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null,null,null,null,camera.Transform);
             map.Draw(spriteBatch);
-            player.Draw(spriteBatch);
+            player.Draw(gameTime,spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

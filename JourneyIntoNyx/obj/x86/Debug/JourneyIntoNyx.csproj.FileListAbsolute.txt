@@ -25,3 +25,5 @@ C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Sharp
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\obj\x86\Debug\JourneyIntoNyx.exe
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\obj\x86\Debug\JourneyIntoNyx.pdb
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\spriteStraight.xnb
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\Spritesheet.xnb
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\obj\x86\Debug\JourneyIntoNyx.csprojResolveAssemblyReference.cache

@@ -13,12 +13,14 @@ namespace JourneyIntoNyx
     class Player
     {
         public Texture2D texture;
-        public Animation PlayerAnimation;
+        public AnimationPlayer animationPlayer;
         public Vector2 position;
         public Vector2 velocity;
         public Rectangle playerRect;
         private bool hasJumped = false;
 
+        Animation walkAnimation;
+        
         /*
         public int Heigth { return PlayerAnimation.FrameWidth; }
         public int Heigth { return PlayerAnimation.FrameHeigth; }
@@ -31,13 +33,14 @@ namespace JourneyIntoNyx
 
         public void Load(ContentManager Content)
         {
-            texture = Content.Load<Texture2D>(@"spriteStraight");
+            walkAnimation = new Animation(Content.Load<Texture2D>(@"Spritesheet"), 23, 0.1f, true);
+            //Add new animations here
         }
 
         public void Update(GameTime gameTime)
         {
             position += velocity;
-            playerRect = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
+            playerRect = new Rectangle((int)position.X, (int)position.Y, walkAnimation.FrameWidth, walkAnimation.FrameHeight - 2);
 
             Input(gameTime);
 
@@ -59,6 +62,12 @@ namespace JourneyIntoNyx
                 velocity.Y = -9f;
                 hasJumped = true;
             }
+
+            if (velocity.X != 0)
+                animationPlayer.PlayAnimation(walkAnimation);
+           // else if(velocity.X == 0)
+                //idle anim
+                
         }
 
         public void Collision(Rectangle newRectangle, int xOffset, int yOffset)
@@ -90,9 +99,15 @@ namespace JourneyIntoNyx
             if (position.Y > yOffset - playerRect.Height) position.Y = yOffset - playerRect.Height;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, playerRect, Color.White);
+            SpriteEffects flip = SpriteEffects.None;
+            if (velocity.X >= 0)
+                flip = SpriteEffects.None;
+            else if (velocity.X < 0)
+                flip = SpriteEffects.FlipHorizontally;
+
+            animationPlayer.Draw(gameTime, spriteBatch, position, flip);
         }
     }
 }

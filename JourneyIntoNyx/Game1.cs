@@ -30,6 +30,7 @@ namespace JourneyIntoNyx
             map = new Map();
             player = new Player();
             camera = new Camera(GraphicsDevice.Viewport);
+            
             base.Initialize();
         }
 

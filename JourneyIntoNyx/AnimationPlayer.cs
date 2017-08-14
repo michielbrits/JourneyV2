@@ -14,7 +14,7 @@ namespace JourneyIntoNyx
         Animation animation;
         public Animation Animation
         {
-            get { return animation;}
+            get { return animation ;}
             
             
         }
@@ -29,7 +29,7 @@ namespace JourneyIntoNyx
         private float timer;
         public Vector2 Origin
         {
-            get { return new Vector2(animation.FrameWidth / 2, animation.FrameHeight); }
+            get { return new Vector2(animation.FrameWidth / 3, animation.FrameHeight); }
         }
 
         public void PlayAnimation(Animation newAnimation)

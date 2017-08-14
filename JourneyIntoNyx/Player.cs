@@ -20,6 +20,7 @@ namespace JourneyIntoNyx
         private bool hasJumped = false;
 
         Animation walkAnimation;
+        Animation idleAnimation;
         
         /*
         public int Heigth { return PlayerAnimation.FrameWidth; }
@@ -34,9 +35,10 @@ namespace JourneyIntoNyx
         public void Load(ContentManager Content)
         {
             
-            walkAnimation = new Animation(Content.Load<Texture2D>(@"Spritesheet"), 23, 0.1f, true);
-            
-
+            walkAnimation = new Animation(Content.Load<Texture2D>(@"spriteRight"), 23, 0.1f, true);
+            idleAnimation = new Animation(Content.Load<Texture2D>(@"spriteStraight"), 23, 0.1f, true);
+            animationPlayer.PlayAnimation(walkAnimation);
+            animationPlayer.PlayAnimation(idleAnimation);
             //Add new animations here
         }
 
@@ -68,8 +70,8 @@ namespace JourneyIntoNyx
 
             if (velocity.X != 0)
                 animationPlayer.PlayAnimation(walkAnimation);
-           // else if(velocity.X == 0)
-                //idle anim
+            else if (velocity.X == 0)
+                animationPlayer.PlayAnimation(idleAnimation);
                 
         }
 
@@ -107,9 +109,9 @@ namespace JourneyIntoNyx
             SpriteEffects flip = SpriteEffects.None;
             if (velocity.X >= 0)
                 flip = SpriteEffects.None;
-            else if (velocity.X < 0)
+            else if (velocity.X <= 0)
                 flip = SpriteEffects.FlipHorizontally;
-
+            
             animationPlayer.Draw(gameTime, spriteBatch, position, flip);
         }
     }

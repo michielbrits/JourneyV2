@@ -57,8 +57,8 @@ namespace JourneyIntoNyx
             else
             {
                 //do nothing
-                
-              
+
+
             }
         }
 

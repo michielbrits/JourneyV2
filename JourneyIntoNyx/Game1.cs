@@ -39,6 +39,8 @@ namespace JourneyIntoNyx
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            background = Content.Load<Texture2D>(@"BackdropDawnFull");
+            mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             Tiles.Content = Content;
             map.Generate(new int[,]
             {
@@ -84,6 +86,10 @@ namespace JourneyIntoNyx
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            spriteBatch.Draw(background, mainFrame, Color.White);
+            spriteBatch.End();
+
             spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null,null,null,null,camera.Transform);
             map.Draw(spriteBatch);
             player.Draw(gameTime,spriteBatch);

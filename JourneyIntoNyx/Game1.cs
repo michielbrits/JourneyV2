@@ -34,7 +34,14 @@ namespace JourneyIntoNyx
             base.Initialize();
         }
 
-     
+        public void dead()
+        {
+            if (player.Alive == false)
+            {
+                player = new Player();
+            }
+        }
+
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.

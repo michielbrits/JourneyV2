@@ -83,6 +83,7 @@ namespace JourneyIntoNyx
                 player.Collision(tile, map.Width, map.Heigth);
                 camera.Update(player.Position, map.Width, map.Heigth);
             }
+            dead();
                 
             base.Update(gameTime);
         }
